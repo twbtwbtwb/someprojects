@@ -1,0 +1,62 @@
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+using namespace std;
+
+/*
+ * This program does a cos of commute calculation.  It asks the user to input the 
+ * number of miles each day, days per week, weeks per year, miles per gallon, and 
+ * the price of gas. Then it calculates the monthly gas expense.  It then prompts
+ * the user to input 'Y' or 'y' if they wants to perform another calculation. When
+ * finished the program outputs the number of calculations, the total mileage, and
+ * the average monthly cost of gas from each calculation.
+ * 
+ * @TylerWillis
+ */
+
+int main(int, char**) {
+
+int counter = 0;
+int totalMiles = 0;
+double totalCost = 0;
+for (;;) {
+    counter ++;
+    int miles;
+    int days;
+    int weeks;
+    int mpg;
+    double price;
+    cout << "How many miles round-trip a day do you commute? ";
+    cin >> miles;
+    cout << "How many days a week do you commute? ";
+    cin >> days;
+    cout << "How many weeks a year do you commute? ";
+    cin >> weeks;
+    cout << "How many miles per gallon does your vehicle get? ";
+    cin >> mpg;
+    cout << "What is the current per gallon price of gas? ";
+    cin >> price;
+    int commuteMiles = miles * days * weeks;
+    totalMiles += commuteMiles;
+    double monthlyGas = commuteMiles / (mpg + 0.0) * price / 12.0;
+    totalCost += monthlyGas;
+    cout << miles << " miles a day" << endl;
+    cout << days << " days a week" << endl;
+    cout << weeks << " weeks a year" << endl;
+    cout << mpg << " miles per gallon" << endl;
+    cout << "$" << price << " per gallon" << endl;
+    cout << "Monthly gas expense: $" << monthlyGas << endl;
+
+    char keepgoing;
+    cout << "Enter 'Y' or 'y' to do another cost of commute calculation (anything else to exit): ";
+    cin >> keepgoing;
+    if (keepgoing == 'Y' || keepgoing == 'y'){
+        continue;
+        }
+        else break;
+}
+double avgcost = totalCost / (counter + 0.0);
+cout << "This program executed " << counter << " cost of commute calculation(s)." << endl;
+cout << "Total commute miles: " << totalMiles << "      " << "Average commute cost: $" << avgcost;
+return 0;
+}
