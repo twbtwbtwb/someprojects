@@ -1,0 +1,37 @@
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+using namespace std;
+
+/*This program asks the user to input an integer and then gives the 
+integer's opposite, double, half, square, reciprocal, one-tenth, 
+square of one-tenth, integer with subtracted last digit, and the sum 
+of the integer plus the integer plus 1 plus the integer plus two.
+*Tyler Willis
+*/
+
+
+int main(int, char**) {
+cout << "Enter an integer:"; int n; cin >> n;
+double n1 = -n;
+double n2 = 2 * n;
+double n3 = (n + 0.0) / 2;
+double n4 = n * n;
+double n5 = 1 / (n + 0.0);
+double n6 = (n + 0.0) / 10;
+double n7 = n6 * n6;
+double n8 = n - n % 10;
+double n9 = n + 1;
+double n10 = n + 2;
+double n11 = 3 * n + 3;
+cout << "the opposite of " << n << " is " << n1 << endl
+     << n << " doubled is " << n2 << endl
+     << "one-half of " << n << " is " << n3 << endl
+     << n << " squared is " << n4 << endl
+     << "the reciprocal of " << n << " is " << n5 << endl
+     << "one-tenth of " << n << " is " << n6 << " and " << n6 << " squared is " << n7 << endl
+     << n << " minus the last digit of " << n << " is " << n8 << endl
+     << "the sum of " << n << " and " << n9 << " and " << n10 << " is " << n11 << endl;
+return 0;
+}
