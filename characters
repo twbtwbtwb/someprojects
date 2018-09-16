@@ -1,0 +1,41 @@
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+
+/*
+ * This program prompts the user to enter a character and then prints information about the entered character
+ * 
+ * @TylerWillis
+ */
+
+int main(int, char**) {
+char c;
+cout << "Enter a character: " ;
+cin >> c;
+if (c >= '0' && c <= '9'){
+    cout << "'" << c << "' is a digit";
+    return 0;
+    }
+if ((c >= '!' && c <= '/') || (c >= ':' && c <= '@') || (c >= '[' && c <= '`') || (c >= '{' && c <= '~')){
+    cout << "'" << c << "' is punctuation";
+    return 0;
+    }
+if (c >= 'a' && c <= 'z'){
+    cout << "'" << c << "'" << " is a lower-case letter" << endl;
+    char u = c - 32;
+    cout << "Upper-case '" << c << "' is '" << u << "'" << endl;;
+    }
+if (c >= 'A' && c <= 'Z'){
+    cout << "'" << c << "'" << " is an upper-case letter" << endl;
+    char l = c + 32;
+    cout << "Lower-case '" << c << "' is '" << l << "'" << endl;
+    }
+if (c == 'Y' || c == 'y'){
+    cout << "'" << c << "' is a consonant sometimes used as a vowel";
+    return 0;
+    }
+if (c == 'A' || c == 'a' || c == 'E' || c == 'e' || c == 'I' || c == 'i' || c == 'O' || c == 'o' || c == 'U' || c == 'u')
+    cout << "'" << c << "' is a vowel";
+    else cout << "'" << c << "' is a consonant";
+return 0;
+}
